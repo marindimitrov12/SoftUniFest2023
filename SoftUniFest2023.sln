@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{E7D5C94E-F821-42E5-B775-6136338EECAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{AF560679-CF3E-4B55-B604-82753BF107AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftUniFest2023.API", "SoftUniFest2023.API\SoftUniFest2023.API.csproj", "{F44D08FF-D807-4FE8-9622-E3909CD0C5DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7D5C94E-F821-42E5-B775-6136338EECAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7D5C94E-F821-42E5-B775-6136338EECAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7D5C94E-F821-42E5-B775-6136338EECAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7D5C94E-F821-42E5-B775-6136338EECAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF560679-CF3E-4B55-B604-82753BF107AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF560679-CF3E-4B55-B604-82753BF107AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF560679-CF3E-4B55-B604-82753BF107AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF560679-CF3E-4B55-B604-82753BF107AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F44D08FF-D807-4FE8-9622-E3909CD0C5DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F44D08FF-D807-4FE8-9622-E3909CD0C5DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F44D08FF-D807-4FE8-9622-E3909CD0C5DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F44D08FF-D807-4FE8-9622-E3909CD0C5DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C368D50-FB27-4B2C-A0FB-32A23C34A6B5}
+	EndGlobalSection
+EndGlobal
