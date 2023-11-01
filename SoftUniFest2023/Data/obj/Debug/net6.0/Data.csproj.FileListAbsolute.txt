@@ -1,0 +1,14 @@
+C:\Users\Owner\source\repos\SoftUniFest2023\SoftUniFest2023\Data\bin\Debug\net6.0\Data.deps.json
+C:\Users\Owner\source\repos\SoftUniFest2023\SoftUniFest2023\Data\bin\Debug\net6.0\Data.runtimeconfig.json
+C:\Users\Owner\source\repos\SoftUniFest2023\SoftUniFest2023\Data\bin\Debug\net6.0\Data.dll
+C:\Users\Owner\source\repos\SoftUniFest2023\SoftUniFest2023\Data\bin\Debug\net6.0\Data.pdb
+C:\Users\Owner\source\repos\SoftUniFest2023\SoftUniFest2023\Data\obj\Debug\net6.0\Data.csproj.AssemblyReference.cache
+C:\Users\Owner\source\repos\SoftUniFest2023\SoftUniFest2023\Data\obj\Debug\net6.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\source\repos\SoftUniFest2023\SoftUniFest2023\Data\obj\Debug\net6.0\Data.AssemblyInfoInputs.cache
+C:\Users\Owner\source\repos\SoftUniFest2023\SoftUniFest2023\Data\obj\Debug\net6.0\Data.AssemblyInfo.cs
+C:\Users\Owner\source\repos\SoftUniFest2023\SoftUniFest2023\Data\obj\Debug\net6.0\Data.csproj.CoreCompileInputs.cache
+C:\Users\Owner\source\repos\SoftUniFest2023\SoftUniFest2023\Data\obj\Debug\net6.0\Data.dll
+C:\Users\Owner\source\repos\SoftUniFest2023\SoftUniFest2023\Data\obj\Debug\net6.0\refint\Data.dll
+C:\Users\Owner\source\repos\SoftUniFest2023\SoftUniFest2023\Data\obj\Debug\net6.0\Data.pdb
+C:\Users\Owner\source\repos\SoftUniFest2023\SoftUniFest2023\Data\obj\Debug\net6.0\Data.genruntimeconfig.cache
+C:\Users\Owner\source\repos\SoftUniFest2023\SoftUniFest2023\Data\obj\Debug\net6.0\ref\Data.dll
