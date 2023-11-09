@@ -4,6 +4,7 @@ using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Services;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
@@ -14,10 +15,12 @@ namespace Api.Controllers
     {
         private readonly IAuthService _authService;
         private readonly IConfiguration _configuration;
-        public ClientsController(IAuthService authService,IConfiguration configuration)
+        private readonly IClientService _clientService;
+        public ClientsController(IAuthService authService,IConfiguration configuration, IClientService _clientService)
         {
                 this._authService = authService;
             this._configuration = configuration;
+            this._clientService = _clientService;
         }
         [HttpPost("registerClient")]
         [ProducesResponseType(typeof(ClientDto), StatusCodes.Status200OK)]
@@ -54,6 +57,24 @@ namespace Api.Controllers
             }
             result.AccessToken = CreateToken(result);
             return Ok(result);
+        }
+        [HttpPost("payWithCripto")]
+        [ProducesResponseType(typeof(CriptoPaymentResponse), StatusCodes.Status200OK)]
+        public async Task<IActionResult> PayWithCripto(EthRequestDto dto)
+        {
+
+            var result = await _clientService.Pay(dto.ClientPrivateKey, dto.CompanyAccount, dto.ClientAccount, Convert.ToDecimal(dto.Amount));
+            if (result.Error != null)
+            {
+                return BadRequest(result.Error);
+            }
+
+            var res = await _clientService.AddProductToClient(dto.ClientName, dto.ProductName);
+            if (res)
+            {
+                return Ok(result);
+            }
+            return BadRequest("you already own it");
         }
         private string CreateToken(ClientDto company)
         {

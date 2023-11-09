@@ -1,9 +1,11 @@
 ﻿using Core.Dtos.Requests;
 using Core.Dtos.Responses;
 using Core.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Services;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
@@ -13,10 +15,12 @@ namespace Api.Controllers
     {
         private readonly IAuthService _authService;
         private readonly IConfiguration _configuration;
-        public CompaniesController(IAuthService authService,IConfiguration conf)
+        private readonly ICompanyService _companyService;
+        public CompaniesController(IAuthService authService,IConfiguration conf, ICompanyService _companyService)
         {
             this._authService = authService;
             this._configuration = conf;
+            this._companyService = _companyService;
         }
         [HttpPost("registerCompany")]
         [ProducesResponseType(typeof(CompanyDto), StatusCodes.Status200OK)]
@@ -51,6 +55,23 @@ namespace Api.Controllers
             }
             result.AccessToken=CreateToken(result);
             return Ok(result);
+        }
+        [HttpGet("getAllVendors")]
+        [ProducesResponseType(typeof(CompanyDto), StatusCodes.Status200OK)]
+        [Authorize(Roles = "Client")]
+        public async Task<IActionResult> GetAllVendor()
+        {
+            var result = await _companyService.GetAllVendors();
+            return Ok(result);
+        }
+        [HttpGet("getByStr")]
+        [Authorize(Roles = "Client")]
+        [ProducesResponseType(typeof(CompanyDto), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetByStr(string str)
+        {
+            var result = await _companyService.GetByStr(str);
+            return Ok(result);
+
         }
         private string CreateToken(CompanyDto company)
         {

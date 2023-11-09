@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Core.Interfaces;
 using Core.Services;
+using Services;
 
 namespace Api
 {
@@ -26,6 +27,9 @@ namespace Api
             builder.Services.AddScoped<DbContext, ApplicationDbContext>();
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddTransient<HttpClient, HttpClient>();
+            builder.Services.AddScoped<ICompanyService,CompanyService>();
+            builder.Services.AddTransient<IClientService, ClientService>();
+            builder.Services.AddScoped<IProductService, ProductService>();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(options =>
@@ -63,9 +67,8 @@ namespace Api
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
-
-
             app.MapControllers();
 
             app.Run();
