@@ -24,6 +24,15 @@ namespace Api
             {
                 o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("customPolicy", policy =>
+                {
+                    policy.WithOrigins("http://localhost:3000");
+                    policy.AllowAnyHeader();
+                    policy.AllowAnyMethod();
+                });
+            });
             builder.Services.AddScoped<DbContext, ApplicationDbContext>();
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddTransient<HttpClient, HttpClient>();
@@ -66,7 +75,7 @@ namespace Api
             }
 
             app.UseHttpsRedirection();
-
+            app.UseCors("customPolicy");
             app.UseAuthentication();
             app.UseAuthorization();
             app.MapControllers();
