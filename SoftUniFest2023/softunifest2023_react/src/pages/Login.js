@@ -16,7 +16,7 @@ export default function Login(){
     }
     
     const onSubmit = async () => {
-        if(registrationType=='client'){
+        if(registrationType==='client'){
             login(loginFormData.email,loginFormData.password)
             .then((res)=>{
               console.log(res);

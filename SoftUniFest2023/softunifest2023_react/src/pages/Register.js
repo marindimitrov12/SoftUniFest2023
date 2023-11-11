@@ -2,24 +2,43 @@ import {useState} from 'react'
 import {useUserContext} from '../context/UserContext'
 import {Link,useNavigate}from 'react-router-dom'
 import { register } from '../services/clientService'
+import { registerCompany } from '../services/companyService'
 export default function Register (){
     const[registerFormData,setRegisterFormData]=useState({ firstname:"",lastname:"",
     email: "", password: "" });
+    const [registrationType, setRegistrationType] = useState('company');
     const { userLogin } = useUserContext();
     const navigate=useNavigate();
     const handleSubmit=async(e)=>{
         e.preventDefault()
         await onSubmit()
     }
-    
+   
     const onSubmit = async () => {
-        register(registerFormData.firstname,registerFormData.lastname,registerFormData.email,registerFormData.password)
-      .then((res)=>{
-        console.log(res);
-        userLogin(res);
-        navigate("/Home");
-      })
+        if(registrationType==='client'){
+            register(registerFormData.firstname,registerFormData.lastname,registerFormData.email,registerFormData.password)
+            .then((res)=>{
+              console.log(res);
+              userLogin(res);
+              navigate("/Home");
+            });
+        }
+        else{
+           registerCompany(registerFormData.firstname,registerFormData.email,registerFormData.password)
+           .then((res)=>{
+             console.log(res);
+             userLogin(res);
+             navigate("/Home")
+           });
+        }
+       
      };
+     const onCompanyClick = ()=>{
+        setRegistrationType('company');
+    }
+    const onClientClick = () => {
+        setRegistrationType('client');
+    }
     const handleChange=(e)=>{
         const { name, value } = e.target
         setRegisterFormData(prev => ({
@@ -29,8 +48,14 @@ export default function Register (){
     }
     return ( <div className="login-container">
     <h1>Register</h1>
+    <div className="inputWrapper">
+                    <input type="radio" name="registrationType" id="company" onClick={onCompanyClick}/>
+                    <label htmlFor="company">Company</label>
+                    <input type="radio" name="registrationType" id="client" onClick={onClientClick}/>
+                    <label htmlFor="client">Client</label>
+                </div>
     <form onSubmit={handleSubmit} className="login-form">
-        <input
+       {registrationType==='client'&&<> <input
             name="firstname"
             onChange={handleChange}
             type="text"
@@ -43,7 +68,15 @@ export default function Register (){
             type="text"
             placeholder="LastName"
             value={registerFormData.lastname}
-        />
+        /></>}
+        {registrationType==='company'&&
+        <input
+        name="firstname"
+        onChange={handleChange}
+        type="text"
+        placeholder="Name"
+        value={registerFormData.firstname}
+    />}
          <input
             name="email"
             onChange={handleChange}
