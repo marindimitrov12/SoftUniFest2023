@@ -2,10 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 import { UserProvider } from './context/UserContext';
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
+import ClientHome from './pages/ClientHome';
 import Layout from './Components/Layout';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import CompanyHome from './pages/CompanyHome';
 function App() {
   return (
     <UserProvider>
@@ -13,8 +14,11 @@ function App() {
     <Routes>
       <Route path="/" element={<Register/>}/>
       <Route path="/login" element={<Login/>}/>
-      <Route path="/Home" element={<Layout/>}>
-      <Route index element={<Home/>}/>
+      <Route path="/clientHome" element={<Layout/>}>
+      <Route index element={<ClientHome/>}/>
+      </Route>
+      <Route path="/companyHome"element={<Layout/>}>
+        <Route index element={<CompanyHome/>}/>
       </Route>
     </Routes>
     </BrowserRouter>

@@ -20,7 +20,7 @@ export default function Register (){
             .then((res)=>{
               console.log(res);
               userLogin(res);
-              navigate("/Home");
+              navigate("/clientHome");
             });
         }
         else{
@@ -28,7 +28,7 @@ export default function Register (){
            .then((res)=>{
              console.log(res);
              userLogin(res);
-             navigate("/Home")
+             navigate("/companyHome")
            });
         }
        

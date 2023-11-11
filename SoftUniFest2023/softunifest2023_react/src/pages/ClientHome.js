@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Home(){
+export default function ClientHome(){
     return (<>
      <section className="py-5">
             <div className="container px-4 px-lg-5 mt-5">

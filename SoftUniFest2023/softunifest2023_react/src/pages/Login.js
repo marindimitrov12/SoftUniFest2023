@@ -21,7 +21,7 @@ export default function Login(){
             .then((res)=>{
               console.log(res);
               userLogin(res);
-              navigate("/Home");
+              navigate("/clientHome");
             })
         }
         else{
@@ -29,7 +29,7 @@ export default function Login(){
             .then((res)=>{
                 console.log(res);
                userLogin(res);
-               navigate("/Home");
+               navigate("/companyHome");
             })
         }
       
