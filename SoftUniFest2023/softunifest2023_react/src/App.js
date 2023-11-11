@@ -7,6 +7,7 @@ import Layout from './Components/Layout';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import CompanyHome from './pages/CompanyHome';
+import CompanyProducts from './pages/CompanyProducts';
 function App() {
   return (
     <UserProvider>
@@ -16,6 +17,7 @@ function App() {
       <Route path="/login" element={<Login/>}/>
       <Route path="/clientHome" element={<Layout/>}>
       <Route index element={<ClientHome/>}/>
+      <Route path="/clientHome/:CompanyName/products" element={<CompanyProducts/>}/>
       </Route>
       <Route path="/companyHome"element={<Layout/>}>
         <Route index element={<CompanyHome/>}/>

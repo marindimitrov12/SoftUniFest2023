@@ -11,3 +11,12 @@ export const loginCompany=async (email,password)=>{
     {method:'POST'})
     return await response.json();
 }
+export const getAllCompanies=async (accessToken)=>{
+    const response=await fetch(`${baseUrl}getAllVendors`,{
+        method:'GET',
+        headers:{
+            'Authorization': `bearer ${accessToken}`
+        }
+    })
+    return await response.json();
+}
