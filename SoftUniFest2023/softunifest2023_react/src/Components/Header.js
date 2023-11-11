@@ -1,6 +1,13 @@
 import React from 'react'
-
+import {Link}from 'react-router-dom'
+import { useUserContext } from '../context/UserContext'
 export default function Header (){
+
+    const{userLogout}=useUserContext();
+    const handleClick=()=>{
+      userLogout();
+      
+    }
     return (<>
      
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,6 +35,10 @@ export default function Header (){
                             <span className="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
                     </form>
+                    <div className='logout'>
+                    <Link className='btn btn-outline-dark'to='/' onClick={handleClick}>Logout</Link>
+                    </div>
+                    
                 </div>
             </div>
         </nav>

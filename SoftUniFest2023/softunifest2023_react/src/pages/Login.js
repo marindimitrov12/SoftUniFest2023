@@ -9,7 +9,7 @@ export default function Login(){
     const [registrationType, setRegistrationType] = useState('company');
     const navigate=useNavigate();
     const {userLogin}=useUserContext();
-    console.log(registrationType);
+    
     const handleSubmit=async(e)=>{
         e.preventDefault()
         await onSubmit()

@@ -10883,3 +10883,6 @@ textarea.form-control-lg {
 .inputWrapper{
   position: relative;
 }
+.logout{
+  padding-left: 20px;
+}
