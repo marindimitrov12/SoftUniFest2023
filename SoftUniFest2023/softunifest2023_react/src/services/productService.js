@@ -9,3 +9,12 @@ export const getAllProducts=async (name,accessToken)=>{
     })
     return await response.json();
 }
+export const getAllProductsByCompanyId=async (id,accessToken)=>{
+    const response=await fetch(`${baseUrl}getAll?companyId=${id}`,{
+        method:'GET',
+        headers:{
+            'Authorization': `bearer ${accessToken}`
+        }
+    })
+    return await response.json();
+}
