@@ -1,6 +1,8 @@
 import React from 'react'
 import {Link}from 'react-router-dom'
+import { useUserContext } from '../context/UserContext'
 export default function Product(props){
+    const{user}=useUserContext();
     return(<>
       <div className="col mb-5">
     <div className="card h-100">
@@ -17,7 +19,8 @@ export default function Product(props){
                              
                          </div>
                          <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                             <div className="text-center"><Link className="btn btn-outline-dark mt-auto" to={`/clientHome/${props.Name}/products`}>Buy</Link></div>
+                             {user.role==='Client'&&<div className="text-center"><Link className="btn btn-outline-dark mt-auto" to={`/clientHome/${props.Name}/products`}>Buy</Link></div>}
+                             {user.role==='Company'&&<div className="text-center"><Link className="btn btn-outline-dark mt-auto" to={`/clientHome/${props.Name}/products`}>Edit</Link></div>}
                          </div>
                    
                        
