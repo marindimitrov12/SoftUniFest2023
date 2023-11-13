@@ -25,6 +25,7 @@ export default function CompanyProducts(){
     Name={p.name}
     Desc={p.description}
     Price={p.price}
+    id={p.id}
     key={p.id}/>)}
            </div>
             </div>

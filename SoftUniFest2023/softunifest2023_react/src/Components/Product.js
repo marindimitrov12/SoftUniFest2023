@@ -13,7 +13,7 @@ export default function Product(props){
                              <div className="text-center">
                                
                                  <h5 className="fw-bolder">{props.Name}</h5>
-                                 <p>{`${props.Desc}`}</p>
+                                 {`${props.Desc}`} 
                                  {`${props.Price}`}
                              </div>
                              

@@ -27,9 +27,10 @@ export default function CompanyHome(){
                          
                        {products===null?<h1>Loading...</h1>:products.map(p=><Product 
                        Name={p.name}
-                       Email={p.description}
-                       Price={p.price}
+                       Desc={p.description}
+                       Price={p.price} 
                        id={p.id}
+                       
                        key={p.id}/>)}
                       
                       
