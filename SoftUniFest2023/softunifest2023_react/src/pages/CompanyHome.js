@@ -2,17 +2,22 @@ import {useState,useEffect} from 'react'
 import Product from '../Components/Product';
 import { useUserContext } from '../context/UserContext';
 import { getAllProductsByCompanyId } from '../services/productService';
+import { useLocation } from 'react-router-dom';
 export default function CompanyHome(){
+
     const [products,setProducts]=useState(null);
     const {user}=useUserContext();
     console.log(user);
+    const location = useLocation();
+
+    
     useEffect(()=>{
         getAllProductsByCompanyId(user.id,user.accessToken)
       .then((res)=>{
         console.log(res);
         setProducts(res);
       })
-    },[])
+    },[location.pathname])
 
     return(<>
         <section className="py-5">

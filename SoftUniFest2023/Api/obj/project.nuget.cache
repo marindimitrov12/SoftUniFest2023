@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cR1YhWNXvYepQ7CKtdEtGkrbmwyzJlt9omg4q+FWM88bjUZ6j1i84C0SSl16z2vfEY46J4wJxKmPvmWEBA8tkw==",
+  "dgSpecHash": "QUvVhciodoiaOiN94JWayxuGbsmMfqpdrvFhYwMCgmiOwmseEFewWwmMU3qFuIT5cBWSdNzpD498H48gw3W6Ng==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Owner\\source\\repos\\SoftUniFest2023\\SoftUniFest2023\\Api\\Api.csproj",
+  "projectFilePath": "C:\\Users\\Owner\\Desktop\\SoftUniFest\\SoftUniFest2023\\Api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Owner\\.nuget\\packages\\adraffy.ensnormalize\\0.1.5\\adraffy.ensnormalize.0.1.5.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",

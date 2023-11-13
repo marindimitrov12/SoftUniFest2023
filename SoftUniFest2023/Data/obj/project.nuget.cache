@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rfM4yNPGIySylNYHOukEzeV9tIEEG51NrPJViZUQpkkaj+VgCAu/Zdfu6S+o3egoP5ccna7+X8vtZ8jVn0ZxSQ==",
+  "dgSpecHash": "df4ZTtwmBnWXcugEdX5HFJBXKgqtdprm+LQbfXkuN88sQoV0ALCNVnb5P8nNt5gwXCTdp1tIAD4YXAJI7bhrnw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Owner\\source\\repos\\SoftUniFest2023\\SoftUniFest2023\\Data\\Data.csproj",
+  "projectFilePath": "C:\\Users\\Owner\\Desktop\\SoftUniFest\\SoftUniFest2023\\Data\\Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Owner\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
