@@ -13,7 +13,7 @@ namespace Api.Controllers
             _productService = productService;
         }
 
-        [HttpPost]
+        [HttpPost("create")]
         [Authorize(Roles = "Company")]
         public async Task<IActionResult> Create(Guid companyId, CreateProductDto product)
         {

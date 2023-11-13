@@ -24,6 +24,7 @@ export default function CompanyHome(){
                        Name={p.name}
                        Email={p.description}
                        Price={p.price}
+                       id={p.id}
                        key={p.id}/>)}
                       
                       

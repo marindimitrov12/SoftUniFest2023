@@ -8,6 +8,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import CompanyHome from './pages/CompanyHome';
 import CompanyProducts from './pages/CompanyProducts';
+import AddOffer from './pages/AddOffer';
+import EditOffer from './pages/EditOffer';
 function App() {
   return (
     <UserProvider>
@@ -21,6 +23,8 @@ function App() {
       </Route>
       <Route path="/companyHome"element={<Layout/>}>
         <Route index element={<CompanyHome/>}/>
+        <Route path="/companyHome/addProduct" element={<AddOffer/>}/>
+        <Route path="/companyHome/:CompanyName/products/:id" element={<EditOffer/>}/>
       </Route>
     </Routes>
     </BrowserRouter>
