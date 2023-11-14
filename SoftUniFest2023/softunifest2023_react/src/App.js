@@ -10,6 +10,8 @@ import CompanyHome from './pages/CompanyHome';
 import CompanyProducts from './pages/CompanyProducts';
 import AddOffer from './pages/AddOffer';
 import EditOffer from './pages/EditOffer';
+import AboutPage from './pages/AboutPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <UserProvider>
@@ -20,11 +22,14 @@ function App() {
       <Route path="/clientHome" element={<Layout/>}>
       <Route index element={<ClientHome/>}/>
       <Route path="/clientHome/:CompanyName/products" element={<CompanyProducts/>}/>
+      <Route path="/clientHome/About"element={<AboutPage/>}/>
       </Route>
+    
       <Route path="/companyHome"element={<Layout/>}>
         <Route index element={<CompanyHome/>}/>
         <Route path="/companyHome/addProduct" element={<AddOffer/>}/>
         <Route path="/companyHome/:CompanyName/products/:id" element={<EditOffer/>}/>
+        <Route path="/companyHome/About"element={<AboutPage/>}/>
       </Route>
     </Routes>
     </BrowserRouter>
