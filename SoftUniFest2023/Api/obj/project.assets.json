@@ -4172,6 +4172,7 @@
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.13",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.13",
+      "Stripe.net >= 43.3.0",
       "Swashbuckle.AspNetCore >= 6.5.0",
       "Swashbuckle.AspNetCore.Filters >= 7.0.12"
     ]
@@ -4235,6 +4236,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[7.0.13, )"
+          },
+          "Stripe.net": {
+            "target": "Package",
+            "version": "[43.3.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

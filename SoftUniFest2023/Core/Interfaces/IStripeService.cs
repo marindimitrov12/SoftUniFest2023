@@ -1,10 +1,15 @@
-﻿
-using StripeWebApiExample.Resources;
+﻿using Core.Dtos.Requests;
+using Stripe;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace StripeWebApiExample.Services;
-
-public interface IStripeService
+namespace Core.Interfaces
 {
-    Task<CustomerResource> CreateCustomer(CreateCustomerResource resource, CancellationToken cancellationToken);
-    Task<ChargeResource> CreateCharge(CreateChargeResource resource, CancellationToken cancellationToken);
+    public interface IStripeService
+    {
+        Task<Product> CreateProduct(CreateProductDto product);
+    }
 }

@@ -2,15 +2,18 @@
 using Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Stripe;
 
 namespace Api.Controllers
 {
     public class ProductsController : Controller
     {
         private readonly IProductService _productService2;
-        public ProductsController(IProductService productService)
+        private readonly IStripeService _service;
+        public ProductsController(IProductService productService,IStripeService service)
         {
             _productService2 = productService;
+            _service = service;
         }
 
         [HttpPost("create")]
@@ -19,6 +22,7 @@ namespace Api.Controllers
         {
             bool isSaved;
 
+
             isSaved = await _productService2.AddProduct(companyId, product);
 
             if (isSaved)
@@ -26,6 +30,25 @@ namespace Api.Controllers
                 return Ok();
             }
             return BadRequest("Error occured while creating the product");
+        }
+        [HttpPost("createStripeProduct")]
+        public async Task<IActionResult> CreateStripeProduct([FromBody] CreateProductDto productRequest)
+        {
+            try
+            {
+                var product= await _service.CreateProduct(productRequest);
+                return Ok(product);
+            }
+            catch (StripeException e)
+            {
+                // Handle Stripe API errors
+                return StatusCode((int)e.HttpStatusCode, new { Error = e.Message });
+            }
+            catch (Exception ex)
+            {
+                // Handle other exceptions
+                return StatusCode(500, new { Error = "An error occurred while creating the product." });
+            }
         }
 
         [HttpGet("getAll")]

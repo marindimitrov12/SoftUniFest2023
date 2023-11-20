@@ -1,69 +1,37 @@
-﻿using Stripe;
-using StripeWebApiExample.Resources;
+﻿using Core.Dtos.Requests;
+using Core.Interfaces;
+using Stripe;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace StripeWebApiExample.Services;
-
-public class StripeService : IStripeService
+namespace Core.Services
 {
-    private readonly TokenService _tokenService;
-    private readonly CustomerService _customerService;
-    private readonly ChargeService _chargeService;
-
-    public StripeService(
-        TokenService tokenService,
-        CustomerService customerService,
-        ChargeService chargeService)
+    public class StripeService : IStripeService
     {
-        _tokenService = tokenService;
-        _customerService = customerService;
-        _chargeService = chargeService;
-    }
-
-    public async Task<CustomerResource> CreateCustomer(CreateCustomerResource resource, CancellationToken cancellationToken)
-    {
-        var tokenOptions = new TokenCreateOptions
+        private readonly ProductCreateOptions _options;
+        private readonly ProductService _service;
+        public StripeService(ProductCreateOptions options, ProductService service)
         {
-            Card = new TokenCardOptions
-            {
-                Name = resource.Card.Name,
-                Number = resource.Card.Number,
-                ExpYear = resource.Card.ExpiryYear,
-                ExpMonth = resource.Card.ExpiryMonth,
-                Cvc = resource.Card.Cvc
-            }
-        };
-        var token = await _tokenService.CreateAsync(tokenOptions, null, cancellationToken);
-
-        var customerOptions = new CustomerCreateOptions
+                _options = options;
+                _service = service;
+        }
+        public async Task<Product> CreateProduct(CreateProductDto productReq)
         {
-            Email = resource.Email,
-            Name = resource.Name,
-            Source = token.Id
-        };
-        var customer = await _customerService.CreateAsync(customerOptions, null, cancellationToken);
+			try
+			{
+                _options.Name = productReq.Name;
+                _options.Description = productReq.Description;
+                var product = await _service.CreateAsync(_options);
+                return product;
+			}
+			catch (Exception ex)
+			{
 
-        return new CustomerResource(customer.Id, customer.Email, customer.Name);
-    }
-
-    public async Task<ChargeResource> CreateCharge(CreateChargeResource resource, CancellationToken cancellationToken)
-    {
-        var chargeOptions = new ChargeCreateOptions
-        {
-            Currency = resource.Currency,
-            Amount = resource.Amount,
-            ReceiptEmail = resource.ReceiptEmail,
-            Customer = resource.CustomerId,
-            Description = resource.Description
-        };
-
-        var charge = await _chargeService.CreateAsync(chargeOptions, null, cancellationToken);
-
-        return new ChargeResource(
-            charge.Id,
-            charge.Currency,
-            charge.Amount,
-            charge.CustomerId,
-            charge.ReceiptEmail,
-            charge.Description);
+                throw new Exception(ex.Message);
+			}
+        }
     }
 }
