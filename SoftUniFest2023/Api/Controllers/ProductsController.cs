@@ -32,6 +32,7 @@ namespace Api.Controllers
             return BadRequest("Error occured while creating the product");
         }
         [HttpPost("createStripeProduct")]
+        [Authorize(Roles ="Company")]
         public async Task<IActionResult> CreateStripeProduct([FromBody] CreateProductDto productRequest)
         {
             try
@@ -51,6 +52,7 @@ namespace Api.Controllers
             }
         }
         [HttpGet("getAllStripeProducts")]
+        [Authorize(Roles ="Client")]
         public async Task<IActionResult> GetAllStripeProducts()
         {
             try
