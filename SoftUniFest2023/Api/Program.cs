@@ -9,6 +9,7 @@ using Core.Interfaces;
 using Core.Services;
 using Services;
 using Stripe;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Api
 {
@@ -47,6 +48,8 @@ namespace Api
             builder.Services.AddTransient<ProductCreateOptions>();
             builder.Services.AddTransient<ProductService>();
             builder.Services.AddTransient<ProductUpdateOptions>();
+            builder.Services.AddTransient<PriceCreateOptions>();
+            builder.Services.AddTransient<PriceService>();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(options =>

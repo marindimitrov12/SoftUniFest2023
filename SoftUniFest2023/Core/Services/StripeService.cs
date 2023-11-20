@@ -12,13 +12,22 @@ namespace Core.Services
     public class StripeService : IStripeService
     {
         private readonly ProductCreateOptions _options;
+        private readonly PriceCreateOptions _priceOptions;
         private readonly ProductUpdateOptions _updateOptions;
         private readonly ProductService _service;
-        public StripeService(ProductCreateOptions options, ProductService service, ProductUpdateOptions updateOptions)
+        private readonly PriceService _priceService;
+        public StripeService(ProductCreateOptions options,
+            ProductService service,
+            ProductUpdateOptions updateOptions,
+            PriceCreateOptions priceOptions,
+            PriceService priceService
+            )
         {
-                _options = options;
-                _service = service;
-            _updateOptions= updateOptions;
+            _options = options;
+            _service = service;
+            _updateOptions = updateOptions;
+            _priceOptions = priceOptions;
+            _priceService = priceService;
         }
         public async Task<Product> CreateProduct(CreateProductDto productReq)
         {
@@ -26,7 +35,11 @@ namespace Core.Services
 			{
                 _options.Name = productReq.Name;
                 _options.Description = productReq.Description;
-                var product = await _service.CreateAsync(_options);
+               var product = await _service.CreateAsync(_options);
+                _priceOptions.Product = product.Id;
+                _priceOptions.UnitAmountDecimal = productReq.Price * 100;
+                _priceOptions.Currency = "bgn";
+                await _priceService.CreateAsync(_priceOptions);
                 return product;
 			}
 			catch (Exception ex)
@@ -47,7 +60,10 @@ namespace Core.Services
                 }
                 _updateOptions.Name = model.Name;
                 _updateOptions.Description = model.Description;
+            
                 var updatedProduct = await _service.UpdateAsync(id, _updateOptions);
+              
+                
                 return updatedProduct;
             }
             catch (Exception ex)
