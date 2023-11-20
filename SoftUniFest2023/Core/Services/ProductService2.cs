@@ -8,10 +8,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Services
 {
-    public class ProductService : IProductService
+    public class ProductService2 : IProductService
     {
         private readonly DbContext _context;
-        public ProductService(DbContext context)
+        public ProductService2(DbContext context)
         {
             _context = context;
         }

@@ -228,3 +228,4 @@ C:\Users\Owner\Desktop\SoftUniFest\SoftUniFest2023\Api\obj\Debug\net6.0\refint\A
 C:\Users\Owner\Desktop\SoftUniFest\SoftUniFest2023\Api\obj\Debug\net6.0\Api.pdb
 C:\Users\Owner\Desktop\SoftUniFest\SoftUniFest2023\Api\obj\Debug\net6.0\Api.genruntimeconfig.cache
 C:\Users\Owner\Desktop\SoftUniFest\SoftUniFest2023\Api\obj\Debug\net6.0\ref\Api.dll
+C:\Users\Owner\Desktop\SoftUniFest\SoftUniFest2023\Api\bin\Debug\net6.0\Stripe.net.dll

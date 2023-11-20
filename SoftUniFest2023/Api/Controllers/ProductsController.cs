@@ -7,10 +7,10 @@ namespace Api.Controllers
 {
     public class ProductsController : Controller
     {
-        private readonly IProductService _productService;
+        private readonly IProductService _productService2;
         public ProductsController(IProductService productService)
         {
-            _productService = productService;
+            _productService2 = productService;
         }
 
         [HttpPost("create")]
@@ -19,7 +19,7 @@ namespace Api.Controllers
         {
             bool isSaved;
 
-            isSaved = await _productService.AddProduct(companyId, product);
+            isSaved = await _productService2.AddProduct(companyId, product);
 
             if (isSaved)
             {
@@ -32,7 +32,7 @@ namespace Api.Controllers
         [Authorize(Roles = "Company")]
         public async Task<IActionResult> GetAll(Guid companyId)
         {
-            var result = await _productService.GetAllProducts(companyId);
+            var result = await _productService2.GetAllProducts(companyId);
 
             return Ok(result);
         }
@@ -41,7 +41,7 @@ namespace Api.Controllers
         [Authorize(Roles = "Client")]
         public async Task<IActionResult> GetByName(string companyName)
         {
-            var result = await _productService.GetAllProducts(companyName);
+            var result = await _productService2.GetAllProducts(companyName);
 
             return Ok(result);
         }
@@ -50,7 +50,7 @@ namespace Api.Controllers
         [Authorize(Roles = "Company")]
         public async Task<IActionResult> GetOne(Guid productId)
         {
-            var result = await _productService.GetProductById(productId);
+            var result = await _productService2.GetProductById(productId);
 
             return Ok(result);
         }
@@ -59,7 +59,7 @@ namespace Api.Controllers
         [Authorize(Roles = "Company")]
         public async Task<IActionResult> Edit(Guid productId, EditProductDto model)
         {
-            var result = await _productService.EditProduct(productId, model);
+            var result = await _productService2.EditProduct(productId, model);
 
             return Ok(result);
         }

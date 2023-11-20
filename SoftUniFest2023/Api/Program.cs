@@ -8,6 +8,7 @@ using System.Text;
 using Core.Interfaces;
 using Core.Services;
 using Services;
+using Stripe;
 
 namespace Api
 {
@@ -33,12 +34,17 @@ namespace Api
                     policy.AllowAnyMethod();
                 });
             });
+            builder.Services.AddScoped<TokenService>();
+            builder.Services.AddScoped<CustomerService>();
+            builder.Services.AddScoped<ChargeService>();
+            StripeConfiguration.ApiKey = builder.Configuration.GetValue<string>("StripeOptions:SecretKey");
+
             builder.Services.AddScoped<DbContext, ApplicationDbContext>();
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddTransient<HttpClient, HttpClient>();
             builder.Services.AddScoped<ICompanyService,CompanyService>();
             builder.Services.AddTransient<IClientService, ClientService>();
-            builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<IProductService, ProductService2>();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(options =>

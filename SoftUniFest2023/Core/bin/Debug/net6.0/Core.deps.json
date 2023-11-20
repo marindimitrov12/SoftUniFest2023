@@ -9,7 +9,8 @@
       "Core/1.0.0": {
         "dependencies": {
           "Data": "1.0.0",
-          "Nethereum.Web3": "4.17.1"
+          "Nethereum.Web3": "4.17.1",
+          "Stripe.net": "43.3.0"
         },
         "runtime": {
           "Core.dll": {}
@@ -406,7 +407,7 @@
         "dependencies": {
           "Nethereum.Hex": "4.17.1",
           "Nethereum.Util": "4.17.1",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/net5.0/Nethereum.ABI.dll": {
@@ -422,7 +423,7 @@
           "Nethereum.Signer": "4.17.1",
           "Nethereum.Signer.EIP712": "4.17.1",
           "Nethereum.Util": "4.17.1",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/net5.0/Nethereum.Accounts.dll": {
@@ -438,7 +439,7 @@
           "Nethereum.JsonRpc.RpcClient": "4.17.1",
           "Nethereum.RPC": "4.17.1",
           "Nethereum.Util": "4.17.1",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/net5.0/Nethereum.BlockchainProcessing.dll": {
@@ -453,7 +454,7 @@
           "Nethereum.ABI": "4.17.1",
           "Nethereum.Hex": "4.17.1",
           "Nethereum.RPC": "4.17.1",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/net5.0/Nethereum.Contracts.dll": {
@@ -464,7 +465,7 @@
       },
       "Nethereum.Hex/4.17.1": {
         "dependencies": {
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/net5.0/Nethereum.Hex.dll": {
@@ -476,7 +477,7 @@
       "Nethereum.JsonRpc.Client/4.17.1": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/net5.0/Nethereum.JsonRpc.Client.dll": {
@@ -488,7 +489,7 @@
       "Nethereum.JsonRpc.RpcClient/4.17.1": {
         "dependencies": {
           "Nethereum.JsonRpc.Client": "4.17.1",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/net5.0/Nethereum.JsonRpc.RpcClient.dll": {
@@ -500,7 +501,7 @@
       "Nethereum.KeyStore/4.17.1": {
         "dependencies": {
           "Nethereum.Hex": "4.17.1",
-          "Newtonsoft.Json": "11.0.2",
+          "Newtonsoft.Json": "12.0.3",
           "Portable.BouncyCastle": "1.8.2"
         },
         "runtime": {
@@ -514,7 +515,7 @@
         "dependencies": {
           "Nethereum.Model": "4.17.1",
           "Nethereum.RLP": "4.17.1",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/net5.0/Nethereum.Merkle.Patricia.dll": {
@@ -527,7 +528,7 @@
         "dependencies": {
           "Nethereum.RLP": "4.17.1",
           "Nethereum.Util": "4.17.1",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/net5.0/Nethereum.Model.dll": {
@@ -539,7 +540,7 @@
       "Nethereum.RLP/4.17.1": {
         "dependencies": {
           "Nethereum.Hex": "4.17.1",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/net5.0/Nethereum.RLP.dll": {
@@ -555,7 +556,7 @@
           "Nethereum.Merkle.Patricia": "4.17.1",
           "Nethereum.Model": "4.17.1",
           "Nethereum.Util": "4.17.1",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/net5.0/Nethereum.RPC.dll": {
@@ -571,7 +572,7 @@
           "Nethereum.Model": "4.17.1",
           "Nethereum.RLP": "4.17.1",
           "Nethereum.Util": "4.17.1",
-          "Newtonsoft.Json": "11.0.2",
+          "Newtonsoft.Json": "12.0.3",
           "Portable.BouncyCastle": "1.8.2"
         },
         "runtime": {
@@ -587,7 +588,7 @@
           "Nethereum.Hex": "4.17.1",
           "Nethereum.Signer": "4.17.1",
           "Nethereum.Util": "4.17.1",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/net5.0/Nethereum.Signer.EIP712.dll": {
@@ -600,7 +601,7 @@
         "dependencies": {
           "Nethereum.Hex": "4.17.1",
           "Nethereum.RLP": "4.17.1",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/net5.0/Nethereum.Util.dll": {
@@ -621,7 +622,7 @@
           "Nethereum.RPC": "4.17.1",
           "Nethereum.Signer": "4.17.1",
           "Nethereum.Util": "4.17.1",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/net5.0/Nethereum.Web3.dll": {
@@ -630,11 +631,11 @@
           }
         }
       },
-      "Newtonsoft.Json/11.0.2": {
+      "Newtonsoft.Json/12.0.3": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "11.0.0.0",
-            "fileVersion": "11.0.2.21924"
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.3.23909"
           }
         }
       },
@@ -643,6 +644,18 @@
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
             "assemblyVersion": "1.8.2.0",
             "fileVersion": "1.8.2.223"
+          }
+        }
+      },
+      "Stripe.net/43.3.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3",
+          "System.Configuration.ConfigurationManager": "6.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/Stripe.net.dll": {
+            "assemblyVersion": "43.3.0.0",
+            "fileVersion": "43.3.0.0"
           }
         }
       },
@@ -1181,12 +1194,12 @@
       "path": "nethereum.web3/4.17.1",
       "hashPath": "nethereum.web3.4.17.1.nupkg.sha512"
     },
-    "Newtonsoft.Json/11.0.2": {
+    "Newtonsoft.Json/12.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
-      "path": "newtonsoft.json/11.0.2",
-      "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
     "Portable.BouncyCastle/1.8.2": {
       "type": "package",
@@ -1194,6 +1207,13 @@
       "sha512": "sha512-XpJVIhjPiO0o+DU36eeIzqnRilDmE8Z7Kfhm9V9o1yNqM3ikgleD94Z5W/LeEu3t63LaZl2CNJexaix+I6AUMg==",
       "path": "portable.bouncycastle/1.8.2",
       "hashPath": "portable.bouncycastle.1.8.2.nupkg.sha512"
+    },
+    "Stripe.net/43.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hZu29R5E6yANSfGclxhWGIVdZmsynEM6EglPTWzD75NzvlN43D662jiTr/Q9e6GDOYXVCLuhfS5XIbP77Md/IA==",
+      "path": "stripe.net/43.3.0",
+      "hashPath": "stripe.net.43.3.0.nupkg.sha512"
     },
     "System.Configuration.ConfigurationManager/6.0.1": {
       "type": "package",
