@@ -50,6 +50,25 @@ namespace Api.Controllers
                 return StatusCode(500, new { Error = "An error occurred while creating the product." });
             }
         }
+        [HttpGet("getAllStripeProducts")]
+        public async Task<IActionResult> GetAllStripeProducts()
+        {
+            try
+            {
+                var products = await _service.GetAllProducts();
+                return Ok(products);
+            }
+            catch (StripeException ex)
+            {
+                return StatusCode((int)ex.HttpStatusCode, new { Error = ex.Message });
+
+            }
+            catch (Exception ex)
+            {
+                // Handle other exceptions
+                return StatusCode(500, new { Error = "An error occurred while creating the product." });
+            }
+        }
 
         [HttpGet("getAll")]
         [Authorize(Roles = "Company")]

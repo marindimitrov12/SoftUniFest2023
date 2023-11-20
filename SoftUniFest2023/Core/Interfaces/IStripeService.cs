@@ -11,5 +11,6 @@ namespace Core.Interfaces
     public interface IStripeService
     {
         Task<Product> CreateProduct(CreateProductDto product);
+        Task<List<Product>>GetAllProducts();
     }
 }

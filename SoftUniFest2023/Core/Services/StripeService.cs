@@ -33,5 +33,19 @@ namespace Core.Services
                 throw new Exception(ex.Message);
 			}
         }
+
+        public async Task<List<Product>> GetAllProducts()
+        {
+            try
+            {
+                var products = await _service.ListAsync(new ProductListOptions { Limit=100});
+                return products.ToList();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
