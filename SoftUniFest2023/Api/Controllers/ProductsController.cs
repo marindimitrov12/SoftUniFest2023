@@ -71,6 +71,21 @@ namespace Api.Controllers
                 return StatusCode(500, new { Error = "An error occurred while creating the product." });
             }
         }
+        [HttpPut("updateStripeProduct")]
+        [Authorize(Roles ="Company")]
+        public async Task<IActionResult> UpdateStripeProduct(string productId, [FromBody] EditProductDto model)
+        {
+            try
+            {
+                var product = await _service.EditProduct(productId,model);
+                return Ok(product); 
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, new { Error = "An error occurred while updating the product." });
+            }
+        }
 
         [HttpGet("getAll")]
         [Authorize(Roles = "Company")]

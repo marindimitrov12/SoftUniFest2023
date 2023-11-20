@@ -12,11 +12,13 @@ namespace Core.Services
     public class StripeService : IStripeService
     {
         private readonly ProductCreateOptions _options;
+        private readonly ProductUpdateOptions _updateOptions;
         private readonly ProductService _service;
-        public StripeService(ProductCreateOptions options, ProductService service)
+        public StripeService(ProductCreateOptions options, ProductService service, ProductUpdateOptions updateOptions)
         {
                 _options = options;
                 _service = service;
+            _updateOptions= updateOptions;
         }
         public async Task<Product> CreateProduct(CreateProductDto productReq)
         {
@@ -32,6 +34,27 @@ namespace Core.Services
 
                 throw new Exception(ex.Message);
 			}
+        }
+
+        public async Task<Product> EditProduct(string id, EditProductDto model)
+        {
+            try
+            {
+                var product=await _service.GetAsync(id);
+                if (product==null)
+                {
+                    throw new Exception("Product not found");
+                }
+                _updateOptions.Name = model.Name;
+                _updateOptions.Description = model.Description;
+                var updatedProduct = await _service.UpdateAsync(id, _updateOptions);
+                return updatedProduct;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
         }
 
         public async Task<List<Product>> GetAllProducts()
