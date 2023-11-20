@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "r1nvEyeQyFNFp+NNK+l4MdWxoI+ZKqJhCLjIwp4/7+9qiQXGDzNn8aKLQ21QtS2LeZHA3b4gRBzVQAuQdf3zmg==",
+  "dgSpecHash": "IPhxjIGGuvmXYgN3XTLlsl6Feq1dJoDAjE/J4fl71pWLg3EA+dYkIDt8Fly6LclSJWBMmlrvNC0/GCvs9oULBQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Owner\\Desktop\\SoftUniFest\\SoftUniFest2023\\Core\\Core.csproj",
   "expectedPackageFiles": [
@@ -54,8 +54,9 @@
     "C:\\Users\\Owner\\.nuget\\packages\\nethereum.signer.eip712\\4.17.1\\nethereum.signer.eip712.4.17.1.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\nethereum.util\\4.17.1\\nethereum.util.4.17.1.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\nethereum.web3\\4.17.1\\nethereum.web3.4.17.1.nupkg.sha512",
-    "C:\\Users\\Owner\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\Owner\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\portable.bouncycastle\\1.8.2\\portable.bouncycastle.1.8.2.nupkg.sha512",
+    "C:\\Users\\Owner\\.nuget\\packages\\stripe.net\\43.3.0\\stripe.net.43.3.0.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",

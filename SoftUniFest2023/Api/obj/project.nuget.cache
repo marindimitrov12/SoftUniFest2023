@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QUvVhciodoiaOiN94JWayxuGbsmMfqpdrvFhYwMCgmiOwmseEFewWwmMU3qFuIT5cBWSdNzpD498H48gw3W6Ng==",
+  "dgSpecHash": "Y+FQerpMrmsvSNJScZ3lMPgobTmJB2dJh0ohAGeHE99yHriAiWbol6mY/fOe0NUF5//Gv7OycavEQy/+07YO1w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Owner\\Desktop\\SoftUniFest\\SoftUniFest2023\\Api\\Api.csproj",
   "expectedPackageFiles": [
@@ -61,9 +61,10 @@
     "C:\\Users\\Owner\\.nuget\\packages\\nethereum.signer.eip712\\4.17.1\\nethereum.signer.eip712.4.17.1.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\nethereum.util\\4.17.1\\nethereum.util.4.17.1.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\nethereum.web3\\4.17.1\\nethereum.web3.4.17.1.nupkg.sha512",
-    "C:\\Users\\Owner\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\Owner\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\portable.bouncycastle\\1.8.2\\portable.bouncycastle.1.8.2.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\scrutor\\3.3.0\\scrutor.3.3.0.nupkg.sha512",
+    "C:\\Users\\Owner\\.nuget\\packages\\stripe.net\\43.3.0\\stripe.net.43.3.0.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\swashbuckle.aspnetcore.filters\\7.0.12\\swashbuckle.aspnetcore.filters.7.0.12.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\swashbuckle.aspnetcore.filters.abstractions\\7.0.12\\swashbuckle.aspnetcore.filters.abstractions.7.0.12.nupkg.sha512",

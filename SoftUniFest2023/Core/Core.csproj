@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Nethereum.Web3" Version="4.17.1" />
+    <PackageReference Include="Stripe.net" Version="43.3.0" />
   </ItemGroup>
 
   <ItemGroup>

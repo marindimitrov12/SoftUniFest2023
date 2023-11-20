@@ -47,6 +47,10 @@
             "Nethereum.Web3": {
               "target": "Package",
               "version": "[4.17.1, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[43.3.0, )"
             }
           },
           "imports": [
