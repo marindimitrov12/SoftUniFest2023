@@ -20,3 +20,18 @@ export const getAllCompanies=async (accessToken)=>{
     })
     return await response.json();
 }
+export const createStripeProduct=async (name,description,price,accessToken)=>{
+const response=await fetch(`${baseUrl}createStripeProduct`,{
+    method:'POST',
+    headers:{
+        'Authorization':`bearer ${accessToken}`,
+        'Content-Type': 'application/json'
+    },
+    body:JSON.stringify({
+        name:name,
+        description:description,
+        price:price
+    }),
+})
+return await response.json();
+}
