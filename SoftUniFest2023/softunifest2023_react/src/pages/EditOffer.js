@@ -5,8 +5,10 @@ import { useUserContext } from '../context/UserContext';
 import { editStripeProduct } from '../services/companyService';
 export default function EditOffer(){
 
-    const [editFormData,setEditFormData]=useState({name:'',oldName:'',desc:''});
+    const [editFormData,setEditFormData]=useState({name:'',desc:''});
     const {id}=useParams();
+    const ids=id.split('|');
+    
     const navigate=useNavigate();
     const {user}=useUserContext();
     const handleSubmit=async (e)=>{
@@ -16,12 +18,12 @@ export default function EditOffer(){
   
     const onSubmit=async()=>{
         
-        editStripeProduct(editFormData.name,editFormData.oldName,editFormData.desc,user.accessToken)
+        editStripeProduct(editFormData.name,ids[1],editFormData.desc,user.accessToken)
         .then((res)=>{
             console.log(res);
         })
        
-        editProduct(id,editFormData.name,editFormData.desc,editFormData.price,user.accessToken)
+        editProduct(ids[0],editFormData.name,editFormData.desc,editFormData.price,user.accessToken)
         .then((res)=>{
            console.log(res);
         })
@@ -47,13 +49,7 @@ export default function EditOffer(){
             placeholder="Name"
             value={editFormData.name}
         />
-         <input
-            name="oldName"
-            onChange={handleChange}
-            type="text"
-            placeholder="OldName"
-            value={editFormData.oldName}
-        />
+       
          <input
             name="desc"
             onChange={handleChange}

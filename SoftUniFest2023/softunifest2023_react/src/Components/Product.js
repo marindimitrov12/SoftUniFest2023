@@ -20,7 +20,7 @@ export default function Product(props){
                          </div>
                          <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
                              {user.role==='Client'&&<div className="text-center"><Link className="btn btn-outline-dark mt-auto" to={`/clientHome/${props.Name}/products`}>Buy</Link></div>}
-                             {user.role==='Company'&&<div className="text-center"><Link className="btn btn-outline-dark mt-auto" to={`/companyHome/${props.Name}/products/${props.id}`}>Edit</Link></div>}
+                             {user.role==='Company'&&<div className="text-center"><Link className="btn btn-outline-dark mt-auto" to={`/companyHome/${props.Name}/products/${props.id}|${props.Name}`}>Edit</Link></div>}
                          </div>
                    
                        
