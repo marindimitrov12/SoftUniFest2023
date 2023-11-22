@@ -72,7 +72,7 @@ namespace Api.Controllers
             }
         }
         [HttpPut("updateStripeProduct")]
-       // [Authorize(Roles ="Company")]
+        [Authorize(Roles ="Company")]
         public async Task<IActionResult> UpdateStripeProduct( [FromBody] EditProductDto model)
         { 
             try

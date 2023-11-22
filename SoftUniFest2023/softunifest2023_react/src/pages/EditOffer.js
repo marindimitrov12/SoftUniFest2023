@@ -32,7 +32,7 @@ export default function EditOffer(){
       const{name,value}=e.target;
     setEditFormData((prev)=>({
     ...prev,
-    [name]:[value]
+    [name]:value
     }))
     }
     return ( <div className="login-container">

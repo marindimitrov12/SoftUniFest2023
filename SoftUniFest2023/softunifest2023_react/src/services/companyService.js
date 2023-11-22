@@ -39,7 +39,7 @@ export const editStripeProduct=async (name,oldName,description,accessToken)=>{
     const response=await fetch(`${baseUrl}updateStripeProduct`,{
      method:'PUT',
      headers:{
-        
+        'Authorization':`bearer ${accessToken}`,
         'Content-Type': 'application/json'
      },
      body:JSON.stringify({
