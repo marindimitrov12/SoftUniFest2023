@@ -12,6 +12,6 @@ namespace Core.Interfaces
     {
         Task<Product> CreateProduct(CreateProductDto product);
         Task<List<Product>>GetAllProducts();
-        Task<Product> EditProduct(string id, EditProductDto model);
+        Task<Product> EditProduct( EditProductDto model);
     }
 }

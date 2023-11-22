@@ -35,3 +35,20 @@ const response=await fetch(`${baseUrl}createStripeProduct`,{
 })
 return await response.json();
 }
+export const editStripeProduct=async (name,oldName,description,accessToken)=>{
+    const response=await fetch(`${baseUrl}updateStripeProduct`,{
+     method:'PUT',
+     headers:{
+        
+        'Content-Type': 'application/json'
+     },
+     body:JSON.stringify({
+        name:name,
+        oldName:oldName,
+        description:description,
+        price:0
+
+     }),
+    })
+    return await response.json();
+}

@@ -72,12 +72,12 @@ namespace Api.Controllers
             }
         }
         [HttpPut("updateStripeProduct")]
-        [Authorize(Roles ="Company")]
-        public async Task<IActionResult> UpdateStripeProduct(string productId, [FromBody] EditProductDto model)
-        {
+       // [Authorize(Roles ="Company")]
+        public async Task<IActionResult> UpdateStripeProduct( [FromBody] EditProductDto model)
+        { 
             try
             {
-                var product = await _service.EditProduct(productId,model);
+                var product = await _service.EditProduct(model);
                 return Ok(product); 
             }
             catch (Exception ex)

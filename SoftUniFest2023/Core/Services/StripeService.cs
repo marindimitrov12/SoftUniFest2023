@@ -49,11 +49,13 @@ namespace Core.Services
 			}
         }
 
-        public async Task<Product> EditProduct(string id, EditProductDto model)
+        public async Task<Product> EditProduct( EditProductDto model)
         {
             try
             {
-                var product=await _service.GetAsync(id);
+               
+                var products=await _service.ListAsync();
+                var product = products.FirstOrDefault(x=>x.Name==model.OldName);
                 if (product==null)
                 {
                     throw new Exception("Product not found");
@@ -61,7 +63,7 @@ namespace Core.Services
                 _updateOptions.Name = model.Name;
                 _updateOptions.Description = model.Description;
             
-                var updatedProduct = await _service.UpdateAsync(id, _updateOptions);
+                var updatedProduct = await _service.UpdateAsync(product.Id, _updateOptions);
               
                 
                 return updatedProduct;

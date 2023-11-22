@@ -2,9 +2,10 @@ import {useState} from 'react'
 import { editProduct } from '../services/productService';
 import { useParams,useNavigate ,Link} from 'react-router-dom';
 import { useUserContext } from '../context/UserContext';
+import { editStripeProduct } from '../services/companyService';
 export default function EditOffer(){
 
-    const [editFormData,setEditFormData]=useState({name:'',desc:'',price:''});
+    const [editFormData,setEditFormData]=useState({name:'',oldName:'',desc:''});
     const {id}=useParams();
     const navigate=useNavigate();
     const {user}=useUserContext();
@@ -12,7 +13,14 @@ export default function EditOffer(){
       e.preventDefault();
       await onSubmit();
     }
+  
     const onSubmit=async()=>{
+        
+        editStripeProduct(editFormData.name,editFormData.oldName,editFormData.desc,user.accessToken)
+        .then((res)=>{
+            console.log(res);
+        })
+       
         editProduct(id,editFormData.name,editFormData.desc,editFormData.price,user.accessToken)
         .then((res)=>{
            console.log(res);
@@ -20,6 +28,7 @@ export default function EditOffer(){
         navigate("/companyHome")
     }
     const handleChange=(e)=>{
+        console.log(editFormData.name)
       const{name,value}=e.target;
     setEditFormData((prev)=>({
     ...prev,
@@ -39,19 +48,20 @@ export default function EditOffer(){
             value={editFormData.name}
         />
          <input
+            name="oldName"
+            onChange={handleChange}
+            type="text"
+            placeholder="OldName"
+            value={editFormData.oldName}
+        />
+         <input
             name="desc"
             onChange={handleChange}
             type="text"
             placeholder="Description"
             value={editFormData.desc}
         />
-         <input
-            name="price"
-            onChange={handleChange}
-            type="number"
-            placeholder="Price"
-            value={editFormData.price}
-        />
+        
         <button>Add</button>
         <Link className='login-link' to="/companyHome">Back to HomePage</Link>
     </form>
