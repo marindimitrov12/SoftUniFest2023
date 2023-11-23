@@ -26,5 +26,6 @@ namespace Data
         public DbSet<Company> Companies { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductToPrice> ProductToPrices { get; set; }
     }
 }
