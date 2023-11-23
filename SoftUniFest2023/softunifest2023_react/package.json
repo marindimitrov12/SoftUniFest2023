@@ -7,6 +7,7 @@
     "@babel/plugin-transform-class-properties": "^7.23.3",
     "@babel/plugin-transform-class-static-block": "^7.23.3",
     "@babel/plugin-transform-classes": "^7.23.3",
+    "@stripe/stripe-js": "^2.2.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
