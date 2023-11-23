@@ -46,6 +46,10 @@ namespace Services
                 .Select(p => new ProductDto { Id = p.Id, Name = p.Name, Description = p.Description, Price = p.Price })
                 .ToListAsync();
         }
+        public async Task<Product> GetProductByName(string name)
+        {
+            return await _context.Set<Product>().FirstOrDefaultAsync(x => x.Name == name);
+        }
 
         public async Task<ProductDto> GetProductById(Guid productId)
         {

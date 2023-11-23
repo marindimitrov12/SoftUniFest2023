@@ -14,8 +14,9 @@ export default function AddOffer(){
        await onSubmit();
     }
     const onSubmit=async()=>{
-        createStripeProduct(addProductFormData.name,addProductFormData.desc,addProductFormData.price,user.accessToken);
-        createProduct(user.id,addProductFormData.name,addProductFormData.desc,addProductFormData.price,user.accessToken);
+      
+       await createProduct(user.id,addProductFormData.name,addProductFormData.desc,addProductFormData.price,user.accessToken);
+        await createStripeProduct(addProductFormData.name,addProductFormData.desc,addProductFormData.price,user.accessToken);
         navigate("/companyHome");
     }
     const handleChange=(e)=>{

@@ -16,11 +16,13 @@ namespace Core.Services
         private readonly ProductUpdateOptions _updateOptions;
         private readonly ProductService _service;
         private readonly PriceService _priceService;
+        private readonly IProductService _productService;
         public StripeService(ProductCreateOptions options,
             ProductService service,
             ProductUpdateOptions updateOptions,
             PriceCreateOptions priceOptions,
-            PriceService priceService
+            PriceService priceService,
+            IProductService productService
             )
         {
             _options = options;
@@ -28,18 +30,21 @@ namespace Core.Services
             _updateOptions = updateOptions;
             _priceOptions = priceOptions;
             _priceService = priceService;
+            _productService = productService;
         }
         public async Task<Product> CreateProduct(CreateProductDto productReq)
         {
+            var myProduct = await _productService.GetProductByName(productReq.Name);
 			try
 			{
-                _options.Name = productReq.Name;
-                _options.Description = productReq.Description;
+                _options.Id = myProduct.Id.ToString();
+                _options.Name = myProduct.Name;
+                _options.Description = myProduct.Description;
                var product = await _service.CreateAsync(_options);
                 _priceOptions.Product = product.Id;
                 _priceOptions.UnitAmountDecimal = productReq.Price * 100;
                 _priceOptions.Currency = "bgn";
-                await _priceService.CreateAsync(_priceOptions);
+               var price= await _priceService.CreateAsync(_priceOptions);
                 return product;
 			}
 			catch (Exception ex)

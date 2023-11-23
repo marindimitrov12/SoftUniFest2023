@@ -1,5 +1,6 @@
 ﻿using Core.Dtos.Requests;
 using Core.Dtos.Responses;
+using Data.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,5 +20,6 @@ namespace Core.Interfaces
         Task<ProductDto> GetProductById(Guid productId);
 
         Task<ProductDto> EditProduct(Guid productId, EditProductDto model);
+        Task<Product> GetProductByName(string name);
     }
 }
