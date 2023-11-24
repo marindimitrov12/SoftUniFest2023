@@ -45,7 +45,7 @@ namespace Core.Services
                 _priceOptions.UnitAmountDecimal = productReq.Price * 100;
                 _priceOptions.Currency = "bgn";
                var price= await _priceService.CreateAsync(_priceOptions);
-                Console.WriteLine(price.Id);
+               await _productService.AddProductToPrice(price.Id, myProduct.Id);
                 return product;
 			}
 			catch (Exception ex)

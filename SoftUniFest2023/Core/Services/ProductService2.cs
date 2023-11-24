@@ -38,6 +38,16 @@ namespace Services
 
             return true;
         }
+        public async Task AddProductToPrice(string priceId,Guid prodId)
+        {
+            var ptop = new ProductToPrice
+            {
+                PriceId = priceId,
+                ProductId = prodId,
+            };
+            await _context.Set<ProductToPrice>().AddAsync(ptop);
+            await _context.SaveChangesAsync();
+        }
 
         public async Task<IEnumerable<ProductDto>> GetAllProducts(Guid companyId)
         {
