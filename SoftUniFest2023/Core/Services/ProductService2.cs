@@ -48,6 +48,16 @@ namespace Services
             await _context.Set<ProductToPrice>().AddAsync(ptop);
             await _context.SaveChangesAsync();
         }
+        public async Task<string> GetProductToPriceById(string prodId)
+        {
+            var result = await _context.Set<ProductToPrice>().FirstOrDefaultAsync(x => x.ProductId.ToString() == prodId);
+            if (result==null)
+            {
+                throw new Exception("This product id doesn't exist");
+            }
+
+            return result.PriceId;
+        }
 
         public async Task<IEnumerable<ProductDto>> GetAllProducts(Guid companyId)
         {

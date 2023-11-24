@@ -1,8 +1,8 @@
-import React from 'react'
+import {useState,useEffect} from 'react'
 import {Link}from 'react-router-dom'
 import { loadStripe } from '@stripe/stripe-js';
 import { useUserContext } from '../context/UserContext'
-
+import { getPriceId } from '../services/productService';
 let stripePromise ;
 
 
@@ -13,9 +13,20 @@ const getStripe=async ()=>{
     return stripePromise;
 };
 export default function Product(props){
+    const[error,setError]=useState(null);
+    const[priceId,setPriceId]=useState(null);
     const{user}=useUserContext();
+    
+    useEffect(()=>{
+        getPriceId(props.id,user.accessToken)
+        .then((res)=>{
+          console.log(res.priceId);
+          
+          setPriceId(res.priceId);
+        });
+    },[]);
    const item={
-    price:"price_1OEyodIoK7RNmfxtMCNblFc1",
+    price:`${priceId}`,
     quantity:1
    };
    const checkoutOptions={
@@ -23,12 +34,18 @@ export default function Product(props){
     mode:"payment",
     successUrl:`${window.location.origin}/clientHome/success`,
     cancelUrl:`${window.location.origin}/clientHome/cancel`,
-   }
+   };
    const redirectToCheckout=async ()=>{
      const stripe=await getStripe();
      const {error}=await stripe.redirectToCheckout(checkoutOptions)
-     console.log(error);
+     if(error){
+       setError(error.message);
+     }
+   };
+   if(error){
+     alert(error);
    }
+
     return(<>
       <div className="col mb-5">
     <div className="card h-100">

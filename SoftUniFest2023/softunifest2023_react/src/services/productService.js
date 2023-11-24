@@ -37,3 +37,12 @@ export const editProduct=async(prodId,name,desc,price,accessToken)=>{
     return await response.json();
 
 }
+export const getPriceId=async(prodId,accessToken)=>{
+    const response=await fetch(`${baseUrl}getPriceId?prodId=${prodId}`,{
+        method:'GET',
+        headers:{
+            'Authorization':`bearer ${accessToken}`
+        }
+    })
+    return await response.json();
+}

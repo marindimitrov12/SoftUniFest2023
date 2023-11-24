@@ -122,5 +122,21 @@ namespace Api.Controllers
 
             return Ok(result);
         }
+        [HttpGet("getPriceId")]
+        [Authorize(Roles = "Client")]
+        public async Task<IActionResult>GetPriceId(string prodId)
+        {
+            string result = null;
+            try
+            {
+                result = await _productService2.GetProductToPriceById(prodId);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(new {message=ex.Message });
+            }
+            return Ok(new { priceId=result});
+        }
     }
 }

@@ -22,5 +22,6 @@ namespace Core.Interfaces
         Task<ProductDto> EditProduct(Guid productId, EditProductDto model);
         Task<Product> GetProductByName(string name);
         Task AddProductToPrice(string priceId, Guid prodId);
+        Task<string> GetProductToPriceById(string prodId);
     }
 }
