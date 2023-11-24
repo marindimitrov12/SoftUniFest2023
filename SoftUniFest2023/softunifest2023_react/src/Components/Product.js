@@ -15,10 +15,12 @@ const getStripe=async ()=>{
 export default function Product(props){
     const[error,setError]=useState(null);
     const[priceId,setPriceId]=useState(null);
-    const{user}=useUserContext();
+    const user=localStorage.getItem('myContext');
+    const role=localStorage.getItem('Role');
+    console.log(user)
     
     useEffect(()=>{
-        getPriceId(props.id,user.accessToken)
+        getPriceId(props.id,user)
         .then((res)=>{
           console.log(res.priceId);
           
@@ -62,8 +64,8 @@ export default function Product(props){
                              
                          </div>
                          <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                             {user.role==='Client'&&<div className="text-center"><Link className="btn btn-outline-dark mt-auto" to={`/clientHome/${props.Name}/products`}onClick={redirectToCheckout}>Buy</Link></div>}
-                             {user.role==='Company'&&<div className="text-center"><Link className="btn btn-outline-dark mt-auto" to={`/companyHome/${props.Name}/products/${props.id}|${props.Name}`}>Edit</Link></div>}
+                             {role==='Client'&&<div className="text-center"><Link className="btn btn-outline-dark mt-auto" to={`/clientHome/${props.Name}/products`}onClick={redirectToCheckout}>Buy</Link></div>}
+                             {role==='Company'&&<div className="text-center"><Link className="btn btn-outline-dark mt-auto" to={`/companyHome/${props.Name}/products/${props.id}|${props.Name}`}>Edit</Link></div>}
                          </div>
                    
                        

@@ -5,11 +5,11 @@ import { useUserContext } from '../context/UserContext';
 export default function ClientHome(){
 
     const [companies,setCompanies]=useState(null);
-    const {user}=useUserContext();
+    const user=localStorage.getItem('myContext');
     
 
     useEffect(()=>{
-        getAllCompanies(user.accessToken)
+        getAllCompanies(user)
         .then((res)=>{
            console.log(res);
            setCompanies(res);

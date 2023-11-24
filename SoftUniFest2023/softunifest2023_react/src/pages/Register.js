@@ -20,6 +20,8 @@ export default function Register (){
             .then((res)=>{
               console.log(res);
               userLogin(res);
+              localStorage.setItem('myContext',res.accessToken);
+              localStorage.setItem('Role',res.role);
               navigate("/clientHome");
             });
         }
@@ -28,6 +30,8 @@ export default function Register (){
            .then((res)=>{
              console.log(res);
              userLogin(res);
+             localStorage.setItem('myContext',res.accessToken);
+             localStorage.setItem('Role',res.role);
              navigate("/companyHome")
            });
         }

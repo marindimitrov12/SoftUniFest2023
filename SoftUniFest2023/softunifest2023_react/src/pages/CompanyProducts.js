@@ -6,11 +6,11 @@ import Product from '../Components/Product';
 export default function CompanyProducts(){
 
     const [products,setProducts]=useState(null);
-    const{user}=useUserContext();
+    const user=localStorage.getItem('myContext');
     const comp=useParams();
    
     useEffect(()=>{
-        getAllProducts(comp.CompanyName,user.accessToken)
+        getAllProducts(comp.CompanyName,user)
         .then((res)=>{
            console.log(res);
            setProducts(res);
