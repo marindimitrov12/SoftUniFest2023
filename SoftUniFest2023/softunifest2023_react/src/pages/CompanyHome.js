@@ -6,13 +6,14 @@ import { useLocation } from 'react-router-dom';
 export default function CompanyHome(){
 
     const [products,setProducts]=useState(null);
-    const {user}=useUserContext();
+    const user=localStorage.getItem('myContext');
+    const id=localStorage.getItem('Id');
     console.log(user);
     const location = useLocation();
 
     
     useEffect(()=>{
-        getAllProductsByCompanyId(user.id,user.accessToken)
+        getAllProductsByCompanyId(id,user)
       .then((res)=>{
         console.log(res);
         setProducts(res);

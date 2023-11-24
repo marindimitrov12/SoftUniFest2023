@@ -7,6 +7,7 @@ export default function Header (){
     const{user}=useUserContext();
     const handleClick=()=>{
       userLogout();
+      localStorage.clear();
       
     }
     return (<>

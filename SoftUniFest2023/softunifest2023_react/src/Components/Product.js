@@ -22,7 +22,7 @@ export default function Product(props){
     useEffect(()=>{
         getPriceId(props.id,user)
         .then((res)=>{
-          console.log(res.priceId);
+          console.log(`sss${res.priceId}`);
           
           setPriceId(res.priceId);
         });

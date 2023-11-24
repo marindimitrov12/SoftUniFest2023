@@ -123,7 +123,7 @@ namespace Api.Controllers
             return Ok(result);
         }
         [HttpGet("getPriceId")]
-        [Authorize(Roles = "Client")]
+        
         public async Task<IActionResult>GetPriceId(string prodId)
         {
             string result = null;

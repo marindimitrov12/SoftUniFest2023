@@ -23,6 +23,7 @@ export default function Login(){
               userLogin(res);
               localStorage.setItem('myContext',res.accessToken);
               localStorage.setItem('Role',res.role);
+              localStorage.setItem('Id',res.id);
               navigate("/clientHome");
             })
         }
@@ -33,6 +34,7 @@ export default function Login(){
                userLogin(res);
                localStorage.setItem('myContext',res.accessToken);
                localStorage.setItem('Role',res.role);
+               localStorage.setItem('Id',res.id);
                navigate("/companyHome");
             })
         }

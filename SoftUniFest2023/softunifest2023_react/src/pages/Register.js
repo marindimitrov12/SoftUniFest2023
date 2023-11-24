@@ -22,6 +22,7 @@ export default function Register (){
               userLogin(res);
               localStorage.setItem('myContext',res.accessToken);
               localStorage.setItem('Role',res.role);
+              localStorage.setItem('Id',res.id);
               navigate("/clientHome");
             });
         }
@@ -32,6 +33,7 @@ export default function Register (){
              userLogin(res);
              localStorage.setItem('myContext',res.accessToken);
              localStorage.setItem('Role',res.role);
+             localStorage.setItem('Id',res.id);
              navigate("/companyHome")
            });
         }
