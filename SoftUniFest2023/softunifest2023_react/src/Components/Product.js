@@ -58,8 +58,8 @@ export default function Product(props){
                              <div className="text-center">
                                
                                  <h5 className="fw-bolder">{props.Name}</h5>
-                                 {`${props.Desc}`} 
-                                 {`${props.Price}`}
+                                 <p>{props.Desc} </p>
+                                 <p>Price:{props.Price} </p>
                              </div>
                              
                          </div>
