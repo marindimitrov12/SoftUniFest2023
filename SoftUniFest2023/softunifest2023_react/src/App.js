@@ -15,6 +15,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import"@stripe/stripe-js";
 import Success from './pages/Success';
 import Cancel from './pages/Cancel';
+import EthPayment from './pages/EthPayment';
 function App() {
   return (
     <UserProvider>
@@ -28,12 +29,13 @@ function App() {
       <Route path="/clientHome/About"element={<AboutPage/>}/>
       <Route path='/clientHome/success'element={<Success/>}/>
       <Route path='/clientHome/cancel'element={<Cancel/>}/>
+      <Route path='/clientHome/products/CryptoPayment/:name' element={<EthPayment/>}/>
       </Route>
     
       <Route path="/companyHome"element={<Layout/>}>
         <Route index element={<CompanyHome/>}/>
         <Route path="/companyHome/addProduct" element={<AddOffer/>}/>
-        <Route path="/companyHome/:CompanyName/products/:id" element={<EditOffer/>}/>
+      
         <Route path="/companyHome/About"element={<AboutPage/>}/>
       </Route>
     </Routes>

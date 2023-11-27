@@ -11,3 +11,9 @@ export const login=async (email,password)=>{
     {method:'POST'})
     return await response.json();
 }
+export const payWithCrypto=async (privateKey,amount,clientAccount,companyAccount,productName,clientName)=>{
+  const response=await fetch(`${baseUrl}payWithCripto?ClientPrivateKey=${privateKey}&Amount=${amount}&CompanyAccount=${companyAccount}&ClientAccount=${clientAccount}&ClientName=${clientName}&ProductName=${productName}`,{
+    method:'POST',
+  });
+  return await response.json();
+}
