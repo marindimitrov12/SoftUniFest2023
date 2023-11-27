@@ -7,8 +7,8 @@ export default function EthPayment(){
     const companyAccount="0xcE354f708B7FC1232017fA73F07d7B4d5F0eFA6b";
     const {name}=useParams();
     const {user} = useUserContext();
-    const res=name.split(' ');
-    console.log(res[1]);
+    const res=name.split('|');
+    console.log(res);
 
     const navigate=useNavigate();
     const onSubmit=(e)=>{
@@ -46,7 +46,7 @@ return (<>
                     <input type="text" placeholder="Client Acount" className={styles.formInput}  name="clientAccount"/>
                     <i className={styles.icon + " fa-solid fa-user icon"}></i>
                 </div>
-                 <button type="submit" className={styles.formBtn}>Register</button>
+                 <button type="submit" className={styles.formBtn}>Buy</button>
                 <Link to={`/clientHome`} className={styles.link}>Back to list!</Link>
             </form>
         </div>

@@ -65,7 +65,7 @@ export default function Product(props){
                          </div>
                          <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
                              {role==='Client'&&<div className="text-center"><Link className="btn btn-outline-dark mt-auto" to={`/clientHome/${props.Name}/products`}onClick={redirectToCheckout}>Buy</Link></div>}
-                             {role==='Client'&&<div className="text-center"><Link className="btn btn-outline-dark mt-auto" to={`/clientHome/products/CryptoPayment/${props.Name} ${props.Price}`}>BuyETH</Link></div>}
+                             {role==='Client'&&<div className="text-center"><Link className="btn btn-outline-dark mt-auto" to={`/clientHome/products/CryptoPayment/${props.Name}|${props.Price}`}>BuyETH</Link></div>}
                              {role==='Company'&&<div className="text-center"><Link className="btn btn-outline-dark mt-auto" to={`/companyHome/${props.Name}/products/${props.id}|${props.Name}`}>Edit</Link></div>}
                          </div>
                    
