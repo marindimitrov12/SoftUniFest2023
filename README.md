@@ -1,5 +1,17 @@
 # SoftUniFest2023 
 
+# Instalation
+
+1.Clone the repo.
+2.Change the connection string in app.jsof
+3.In the Packet Manager console run Update-database.
+
+To run the react app
+
+1.run npmi
+
+2.change the base url in the services
+
 # Description
 
 Create a program to enable online payments between
